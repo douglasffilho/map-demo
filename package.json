@@ -7,11 +7,17 @@
   "license": "MIT",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint . --fix && npx prettier --write .",
     "start": "expo start",
-    "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "clean": "chmod +x clean && ./clean",
+    "simulate:android": "chmod +x simulate-android && nohup ./simulate-android &>./nohup.out &",
+    "android": "yarn simulate:android && yarn start",
+    "build:android": "expo login && expo build:android -t app-bundle",
+    "apk": "expo login && expo build:android -t apk"
   },
   "dependencies": {
     "expo": "42.0.3",
@@ -22,7 +28,31 @@
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "7.15.0"
+    "@babel/core": "7.15.0",
+    "@commitlint/cli": "13.1.0",
+    "@commitlint/config-conventional": "13.1.0",
+    "@types/jest": "27.0.1",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-jest": "24.4.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.25.1",
+    "git-cz": "4.7.6",
+    "husky": "7.0.2",
+    "jest": "27.1.0",
+    "lint-staged": "11.1.2",
+    "prettier": "2.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npx eslint .",
+      "npx prettier --write ."
+    ]
   },
   "private": true
 }

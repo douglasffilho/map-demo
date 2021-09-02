@@ -1,0 +1,4 @@
+#bash/bin
+killall -9 ~/Android/Sdk/emulator/qemu/linux-x86_64/qemu-system-i386
+rm -rf ~/.android/avd/api_26.avd/*.lock
+~/Android/Sdk/tools/emulator -avd api_26

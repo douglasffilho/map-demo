@@ -1,0 +1,7 @@
+// .eslintignore
+node_modules
+.expo
+web-build
+web
+android
+ios
