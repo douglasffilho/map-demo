@@ -28,6 +28,7 @@
     "platforms": [
       "android",
       "ios"
-    ]
+    ],
+    "owner": "douglasffilho"
   }
 }
