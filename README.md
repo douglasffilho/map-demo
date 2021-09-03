@@ -34,3 +34,6 @@ A map app demo
 - after update project on git, run `yarn android` then start your emulator and play your project from Metro bundler
 - you should run your app by hitting `Run on Android device/emulator`
 - To run on IOS, you may read [this](https://docs.expo.dev/workflow/ios-simulator/)
+- add expo-location and react-native-maps dependencies
+- remove expo-status-bar dependency
+- created a MapView updated by listener on location changes
