@@ -26,7 +26,12 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.douglasffilho.mapdemo",
-      "versionCode": 1
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAfYBjUiFMHBMi873jlp5VgWXANoMAda5I"
+        }
+      }
     },
     "platforms": [
       "android",
