@@ -19,6 +19,9 @@ const MapContainer = () => {
           longitudeDelta: 0.09,
         }}
         provider={PROVIDER_GOOGLE}
+        cacheEnabled={true}
+        loadingEnabled={true}
+        showsCompass={true}
       >
         <Marker coordinate={location} />
       </MapView>
