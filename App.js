@@ -1,5 +1,4 @@
 import * as Location from 'expo-location';
-import { LocationAccuracy } from 'expo-location';
 import React, { useEffect } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
 import MapContainer from './src/components/MapContainer';
@@ -56,7 +55,7 @@ const requestLocationPermission = async () => {
 const getCurrentPosition = async () => {
   try {
     await Location.watchPositionAsync(
-      { accuracy: LocationAccuracy.Balanced },
+      { accuracy: Location.LocationAccuracy.Balanced },
       (info) => {
         const latitude = info?.coords?.latitude ?? 0;
         const longitude = info?.coords?.longitude ?? 0;
